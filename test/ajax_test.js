@@ -3,8 +3,8 @@ TestCase("AjaxCreateTest",{
         var xhr = tddjs.ajax.create();
 
         assertNumber(xhr.readyState);
-        assert(tddjs.isHostMethod(xhr, "open"));
-        assert(tddjs.isHostMethod(xhr, "send"));
-        assert(tddjs.isHostMethod(xhr, "setRequestHeader"));
+        assert(tddjs.isHostObject(xhr, "open"));
+        assert(tddjs.isHostObject(xhr, "send"));
+        assert(tddjs.isHostObject(xhr, "setRequestHeader"));
     }
 });
