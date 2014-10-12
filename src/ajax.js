@@ -1,4 +1,7 @@
-tddjs.namespace("ajax").create = function(){
+(function(){
+    var xhr;
+    var ajax = tddjs.namespace("ajax");
+
     var options = [
         function(){
             return new activeXObject("Microdoft.XMLHTTP");
@@ -7,10 +10,15 @@ tddjs.namespace("ajax").create = function(){
             return new XMLHttpRequest();
         }
     ];
+
     for (var i = 0, l = options.length; i < l; i++) {
         try{
-            return options[i]();
+            xhr = options[i]();
+            ajax.create = options[i];
+            break;
         } catch(e){}
     }
-    return null;
-};
+
+}());
+
+
