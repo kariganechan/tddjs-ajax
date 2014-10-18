@@ -33,6 +33,16 @@
             ajax.get(url);
             assertEquals(["GET", url, true], this.xhr.open.args);
 
+        },
+
+        "test should add onreadystatechange handler":function(){
+            ajax.get("/url");
+            assertFunction(this.xhr.onreadystatechange);
+        },
+
+        "test should call send":function(){
+            ajax.get("/url");
+            assert(this.xhr.send.called);
         }
     });
 }());
