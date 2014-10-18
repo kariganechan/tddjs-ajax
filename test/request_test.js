@@ -2,7 +2,7 @@
     var ajax = tddjs.ajax;
 
     TestCase("GetRequestTest",{
-        "setUp": function(){
+        setUp: function(){
             this.ajaxCreate = ajax.create;
             this.xhr = Object.create(fakeXMLHttpRequest);
             ajax.create = stubFn(this.xhr);
