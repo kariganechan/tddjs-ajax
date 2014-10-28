@@ -75,6 +75,11 @@
             assertNoException(function(){
                 this.xhr.onreadystatechange();
             }.bind(this));
+        },
+
+        "test should pass null as argument to send": function(){
+            ajax.get("url");
+            assertNull(this.xhr.send.args[0]);
         }
     });
 }());
