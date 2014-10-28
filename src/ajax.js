@@ -4,7 +4,7 @@
 
     var options = [
         function(){
-            return new activeXObject("Microdoft.XMLHTTP");
+            return new ActiveXObject("Microdoft.XMLHTTP");
         },
         function(){
             return new XMLHttpRequest();
