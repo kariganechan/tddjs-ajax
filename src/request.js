@@ -1,3 +1,5 @@
+tddjs.noop = function(){};
+
 (function(){
     var ajax = tddjs.namespace("ajax");
 
