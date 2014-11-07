@@ -80,6 +80,13 @@
         "test should pass null as argument to send": function(){
             ajax.get("url");
             assertNull(this.xhr.send.args[0]);
+        },
+
+        "test should reset onreadystatechange when complete": function(){
+            this.xhr.readyState = 4;
+            ajax.get("/url");
+            this.xhr.onreadystatechange();
+            assertSame(tddjs.noop,this.xhr.onreadystatechange);
         }
     });
 }());
